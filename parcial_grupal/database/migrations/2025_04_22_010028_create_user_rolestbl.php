@@ -13,8 +13,10 @@ return new class extends Migration
     {
         Schema::create('user_rolestbl', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->foreignId('role_id')->constrained()->onDelete('cascade');
+            $table->integer('user_id');
+            $table->integer('role_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('role_id')->references ('id')->on ('roles')->onDelete('cascade');
             $table->timestamps();
         });
     }

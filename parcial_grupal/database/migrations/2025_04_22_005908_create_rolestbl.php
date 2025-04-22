@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('rolestbl', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->unique(); // admin, organizer, logistic
+            $table->string('name')->unique(); 
             $table->string('description')->nullable();
             $table->timestamps();
         });
